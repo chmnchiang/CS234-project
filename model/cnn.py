@@ -9,26 +9,25 @@ class ConvModel(torch.nn.Module):
         self.conv = torch.nn.Sequential(
             torch.nn.Conv2d(in_channels=3, 
                             out_channels=5,
-                            kernel_size=(5, 5),
-                            padding=1),
-            torch.nn.MaxPool2d(kernel_size=(2, 2)), 
-            torch.nn.Conv2d(in_channels=5, 
-                            out_channels=3,
                             kernel_size=(5, 5)),
-            torch.nn.MaxPool2d(kernel_size=(2, 2)), 
-        )
-
-        self.conv = torch.nn.Sequential(
-            torch.nn.Conv2d(in_channels=3, 
-                            out_channels=5,
-                            kernel_size=(3, 3),
-                            padding=1),
-            torch.nn.MaxPool2d(kernel_size=(3, 3)), 
+            torch.nn.MaxPool2d(kernel_size=(4, 4)), 
             torch.nn.Conv2d(in_channels=5, 
                             out_channels=5,
                             kernel_size=(2, 2)),
             torch.nn.MaxPool2d(kernel_size=(2, 2)), 
         )
+
+        # self.conv = torch.nn.Sequential(
+            # torch.nn.Conv2d(in_channels=3, 
+                            # out_channels=5,
+                            # kernel_size=(3, 3),
+                            # padding=1),
+            # torch.nn.MaxPool2d(kernel_size=(3, 3)), 
+            # torch.nn.Conv2d(in_channels=5, 
+                            # out_channels=5,
+                            # kernel_size=(2, 2)),
+            # torch.nn.MaxPool2d(kernel_size=(2, 2)), 
+        # )
 
 
         x = torch.zeros((1, *state_shape))
@@ -36,7 +35,7 @@ class ConvModel(torch.nn.Module):
         x = x.flatten(start_dim=1)
 
         hidden = x.shape[1]
-        print('h', hidden)
+        print('hidden =', hidden)
 
         self.mlp = torch.nn.Sequential(
             torch.nn.Linear(hidden, 20),

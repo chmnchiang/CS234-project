@@ -1,0 +1,13 @@
+Reward = 9.45
+Reward = 10.3
+Reward = 50.7
+Reward = 47.65
+Reward = 107.65
+Reward = 50.15
+Reward = 85.45
+Reward = 106.2
+Reward = 104.4
+Reward = 69.3
+best = 63.376666666666665
+worst = 12.820000000000002
+average = 40.22833333333333

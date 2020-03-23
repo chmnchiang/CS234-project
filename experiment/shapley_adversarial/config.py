@@ -4,4 +4,3 @@ class Config(BaseConfig):
     gamma = 0.9
     max_step = 300
     zero_initialize = True
-    lr = 0.1

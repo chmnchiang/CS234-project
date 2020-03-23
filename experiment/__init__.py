@@ -6,6 +6,7 @@ class Experiments(Enum):
     shapley_explain = 'shapley_explain'
     influence_explain = 'influence_explain'
     shapley_identify = 'shapley_identify'
+    influence_identify = 'influence_identify'
 
     def __str__(self):
         return self.value

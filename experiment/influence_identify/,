@@ -1,0 +1,38 @@
+import numpy as np
+
+FILE = [0, 1, 20, 21, 22, 23, 24]
+
+G = []
+B = []
+
+for fn in FILE:
+    file_name = f'./result/shapley_identify/seed-{fn}.txt'
+    with open(file_name) as f:
+        it = iter(f)
+
+        mp = {}
+
+        for i in range(16):
+            line = next(it)
+            _, i, l = line.split()
+            i = int(i)
+            l = int(l)
+            mp[i] = l
+
+
+        line = next(it)
+        order = eval(line)
+        best = [i for i, _ in order[:4]]
+        worst = [i for i, _ in order[-4:]]
+        
+        for b in best:
+            G.append(mp[b])
+        for w in worst:
+            B.append(mp[w])
+
+G.sort()
+B.sort()
+
+print(G)
+print(B)
+print(np.mean(G), np.mean(B))

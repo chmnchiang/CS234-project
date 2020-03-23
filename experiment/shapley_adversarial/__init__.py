@@ -60,3 +60,6 @@ def main(arg=None):
         state = np.argmax(state)
         print(state, action, r)
 
+
+
+# if __name__ == '__main__':
